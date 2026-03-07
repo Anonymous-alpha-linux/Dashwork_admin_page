@@ -11,7 +11,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // import required modules
-import { Autoplay, Mousewheel } from "swiper";
+import { Autoplay, Mousewheel } from "swiper/modules";
 
 const ReviewSlider = () => {
   return (
@@ -23,7 +23,7 @@ const ReviewSlider = () => {
       loop={true}
       autoplay={{
         delay: 2000,
-        disableOnInteraction: false,
+        disableOnInteraction: false
       }}
       modules={[Autoplay, Mousewheel]}
       className="mySwiper vertical-swiper"
