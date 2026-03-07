@@ -54,7 +54,8 @@ const ForgetPasswordPage = (props) => {
     forgetSuccessMsg: state.ForgetPassword.forgetSuccessMsg
   }));
 
-  document.title = "Reset Password | Velzon - React Admin & Dashboard Template";
+  document.title =
+    "Reset Password | Dashwork - React Admin & Dashboard Template";
 
   return (
     <ParticlesAuth>
@@ -81,7 +82,7 @@ const ForgetPasswordPage = (props) => {
                 <CardBody className="p-4">
                   <div className="text-center mt-2">
                     <h5 className="text-primary">Forgot Password?</h5>
-                    <p className="text-muted">Reset password with velzon</p>
+                    <p className="text-muted">Reset password with dashwork</p>
 
                     <lord-icon
                       src="https://cdn.lordicon.com/rhvddzym.json"
