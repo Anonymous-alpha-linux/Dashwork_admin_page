@@ -15,6 +15,13 @@ import fakeBackend from "./helpers/AuthType/fakeBackend";
 // Kiểm tra xem có phải môi trường Phát triển (Local) không
 if (import.meta.env.DEV) {
   console.log("Bạn đang ở chế độ Development 🛠️");
+  // Activating fake backend
+  fakeBackend();
+}
+
+// Kiểm tra xem có phải môi trường Producton (Đã build) không
+if (import.meta.env.PROD) {
+  console.log("Bạn đang ở chế độ Production 🚀");
   const firebaseConfig = {
     apiKey: import.meta.env.VITE_APP_APIKEY,
     authDomain: import.meta.env.VITE_APP_AUTHDOMAIN,
@@ -28,13 +35,6 @@ if (import.meta.env.DEV) {
 
   // init firebase backend
   initFirebaseBackend(firebaseConfig);
-}
-
-// Kiểm tra xem có phải môi trường Producton (Đã build) không
-if (import.meta.env.PROD) {
-  console.log("Bạn đang ở chế độ Production 🚀");
-  // Activating fake backend
-  fakeBackend();
 }
 
 function App() {
