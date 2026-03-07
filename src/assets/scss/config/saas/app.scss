@@ -9,6 +9,15 @@
 @import "theme-light";
 @import "theme-dark";
 
+// Structure
+@import "../../structure/topbar";
+@import "../../structure/page-head";
+@import "../../structure/footer";
+@import "../../structure/vertical";
+@import "../../structure/horizontal";
+@import "../../structure/two-column";
+@import "../../structure/layouts";
+
 // Components
 @import "../../components/waves";
 @import "../../components/avatar";
@@ -80,3 +89,4 @@
 
 // Pages
 @import "../../pages/authentication";
+@import "../../pages/dashboard";
