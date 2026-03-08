@@ -59,7 +59,8 @@
     "redux": "^5.0.1",
     "redux-saga": "^1.4.2",
     "sass-embedded": "^1.97.3",
-    "vite": "^8.0.0-beta.13"
+    "vite": "^8.0.0-beta.13",
+    "vite-tsconfig-paths": "^6.1.1"
   },
   "resolutions": {
     "vite": "^8.0.0-beta.13"

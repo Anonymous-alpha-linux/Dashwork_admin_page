@@ -31,7 +31,7 @@ body {
 }
 .noUi-handle {
   background: #13c56b !important;
-  border: 2px solid var(--vz-card-bg) !important;
+  border: 2px solid var(--#{$prefix}card-bg) !important;
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
@@ -39,8 +39,8 @@ body {
   background: #fafafa !important;
   border-radius: 4px !important;
   border: 1px solid #d3d3d3 !important;
-  background-color: var(--vz-light) !important;
-  border-color: var(--vz-light) !important;
+  background-color: var(--#{$prefix}light) !important;
+  border-color: var(--#{$prefix}light) !important;
   box-shadow: none !important;
   height: 4px !important;
 }
