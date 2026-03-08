@@ -16,12 +16,15 @@ import fakeBackend from "./helpers/AuthType/fakeBackend";
 if (import.meta.env.DEV) {
   console.log("Bạn đang ở chế độ Development 🛠️");
   // Activating fake backend
-  fakeBackend();
 }
-
 // Kiểm tra xem có phải môi trường Producton (Đã build) không
 if (import.meta.env.PROD) {
   console.log("Bạn đang ở chế độ Production 🚀");
+}
+
+if (["fake", "jwt"].includes(import.meta.env.VITE_APP_DEFAULTAUTH)) {
+  fakeBackend();
+} else if (import.meta.env.VITE_APP_DEFAULTAUTH === "firebase") {
   const firebaseConfig = {
     apiKey: import.meta.env.VITE_APP_APIKEY,
     authDomain: import.meta.env.VITE_APP_AUTHDOMAIN,

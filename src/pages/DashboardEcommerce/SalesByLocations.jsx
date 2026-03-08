@@ -1,6 +1,9 @@
 import React from "react";
 import { Card, CardBody, CardHeader, Col } from "reactstrap";
 import Vector from "./VectorMap";
+import appCommon from "@common/app";
+
+const { brandPrefix } = appCommon;
 
 const SalesByLocations = () => {
   return (
@@ -18,7 +21,7 @@ const SalesByLocations = () => {
 
           <CardBody>
             <div
-              data-colors='["--vz-light", "--vz-success", "--vz-primary"]'
+              data-colors={`["--${brandPrefix}-light", "--${brandPrefix}-success", "--${brandPrefix}-primary"]`}
               style={{ height: "269px" }}
               dir="ltr"
             >
