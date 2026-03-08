@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Card, CardBody, CardHeader, Col, Row } from "reactstrap";
 import { RevenueCharts } from "./DashboardEcommerceCharts";
-import CountUp from "react-countup";
+import CountUpRaw from "react-countup";
 import { useSelector, useDispatch } from "react-redux";
 import { getRevenueChartsData } from "../../store/dashboardEcommerce/action";
+const CountUp = CountUpRaw.default ? CountUpRaw.default : CountUpRaw;
 
 const Revenue = () => {
   const dispatch = useDispatch();
@@ -75,7 +76,7 @@ const Revenue = () => {
             <Col xs={6} sm={3}>
               <div className="p-3 border border-dashed border-start-0">
                 <h5 className="mb-1">
-                  {/* <CountUp start={0} end={7585} duration={3} separator="," /> */}
+                  <CountUp start={0} end={7585} duration={3} separator="," />
                 </h5>
                 <p className="text-muted mb-0">Orders</p>
               </div>
@@ -83,14 +84,14 @@ const Revenue = () => {
             <Col xs={6} sm={3}>
               <div className="p-3 border border-dashed border-start-0">
                 <h5 className="mb-1">
-                  {/* <CountUp
+                  <CountUp
                     suffix="k"
                     prefix="$"
                     start={0}
                     decimals={2}
                     end={22.89}
                     duration={3}
-                  /> */}
+                  />
                 </h5>
                 <p className="text-muted mb-0">Earnings</p>
               </div>
@@ -98,7 +99,7 @@ const Revenue = () => {
             <Col xs={6} sm={3}>
               <div className="p-3 border border-dashed border-start-0">
                 <h5 className="mb-1">
-                  {/* <CountUp start={0} end={367} duration={3} /> */}
+                  <CountUp start={0} end={367} duration={3} />
                 </h5>
                 <p className="text-muted mb-0">Refunds</p>
               </div>
@@ -106,13 +107,13 @@ const Revenue = () => {
             <Col xs={6} sm={3}>
               <div className="p-3 border border-dashed border-start-0 border-end-0">
                 <h5 className="mb-1 text-success">
-                  {/* <CountUp
+                  <CountUp
                     start={0}
                     end={18.92}
                     decimals={2}
                     duration={3}
                     suffix="%"
-                  /> */}
+                  />
                 </h5>
                 <p className="text-muted mb-0">Conversation Ratio</p>
               </div>
