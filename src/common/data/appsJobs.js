@@ -29,6 +29,9 @@ import mail_chimp from "../../assets/images/brands/mail_chimp.png";
 import dropbox from "../../assets/images/brands/dropbox.png";
 import bitBucket from "../../assets/images/brands/bitbucket.png";
 import dribble from "../../assets/images/brands/dribbble.png";
+import appCommon from "@common/app";
+
+const { brandPrefix } = appCommon;
 
 const jobWidgets = [
   {
@@ -36,57 +39,57 @@ const jobWidgets = [
     lable: "Application",
     icon: "ri-arrow-up-line ",
     badgeColor: "success",
-    iconColor: '["--vz-success" , "--vz-transparent"]',
+    iconColor: `['--${brandPrefix}-success' , "--${brandPrefix}-transparent"]`,
     number: "16.24 %",
     series: [
       {
         name: "Results",
-        data: [0, 110, 95, 75, 120],
-      },
-    ],
+        data: [0, 110, 95, 75, 120]
+      }
+    ]
   },
   {
     id: 2,
     lable: "Interviewed",
     icon: "ri-arrow-up-line ",
     badgeColor: "success",
-    iconColor: '["--vz-success" , "--vz-transparent"]',
+    iconColor: `["--${brandPrefix}-success" , "--${brandPrefix}-transparent"]`,
     number: "16.24 %",
     series: [
       {
         name: "Results",
-        data: [0, 68, 35, 90, 99],
-      },
-    ],
+        data: [0, 68, 35, 90, 99]
+      }
+    ]
   },
   {
     id: 3,
     lable: "Hired",
     icon: "ri-arrow-up-line ",
     badgeColor: "success",
-    iconColor: '["--vz-success" , "--vz-transparent"]',
+    iconColor: `["--${brandPrefix}-success" , "--${brandPrefix}-transparent"]`,
     number: "16.24 %",
     series: [
       {
         name: "Results",
-        data: [0, 36, 110, 95, 130],
-      },
-    ],
+        data: [0, 36, 110, 95, 130]
+      }
+    ]
   },
   {
     id: 4,
     lable: "Rejected",
     icon: "ri-arrow-down-line ",
     badgeColor: "danger",
-    iconColor: '["--vz-danger" , "--vz-transparent"]',
+    iconColor: `["--${brandPrefix}-danger" , "--${brandPrefix}-transparent"]`,
     number: "3.24 %",
     series: [
       {
         name: "Results",
-        data: [0, 98, 85, 90, 67],
-      },
-    ],
-  },
+        data: [0, 98, 85, 90, 67]
+      }
+    ]
+  }
 ];
 
 const jobList = [
@@ -103,7 +106,7 @@ const jobList = [
     experience: "2 Year",
     location: "Escondido, California",
     applied: "640 Applied",
-    postDate: "11 Sep, 2022",
+    postDate: "11 Sep, 2022"
   },
   {
     id: 2,
@@ -118,7 +121,7 @@ const jobList = [
     experience: "Fresher",
     location: "Vinninga, Sweden",
     applied: "134 Applied",
-    postDate: "13 Sep, 2022",
+    postDate: "13 Sep, 2022"
   },
   {
     id: 3,
@@ -133,7 +136,7 @@ const jobList = [
     experience: "0 - 5 Year",
     location: "Cullera, Spain",
     applied: "79 Applied",
-    postDate: "14 Sep, 2022",
+    postDate: "14 Sep, 2022"
   },
   {
     id: 4,
@@ -148,7 +151,7 @@ const jobList = [
     experience: "1 Year",
     location: "Stordorf, Germany",
     applied: "36 Applied",
-    postDate: "14 Sep, 2022",
+    postDate: "14 Sep, 2022"
   },
   {
     id: 5,
@@ -163,8 +166,8 @@ const jobList = [
     experience: "1 - 2 Year",
     location: "United Kingdom",
     applied: "74 Applied",
-    postDate: "15 Sep, 2022",
-  },
+    postDate: "15 Sep, 2022"
+  }
 ];
 
 const jobGrid = [
@@ -178,7 +181,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Full Time", "Freelance", " Urgent"],
-    status: "Active",
+    status: "Active"
   },
   {
     id: 2,
@@ -190,7 +193,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Part Time", " Freelance"],
-    status: "New",
+    status: "New"
   },
   {
     id: 3,
@@ -202,7 +205,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Full Time", " Private"],
-    status: "Active",
+    status: "Active"
   },
   {
     id: 4,
@@ -214,7 +217,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Full Time", "Freelance", " Urgent"],
-    status: "New",
+    status: "New"
   },
   {
     id: 5,
@@ -226,7 +229,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Part Time"],
-    status: "Active",
+    status: "Active"
   },
   {
     id: 6,
@@ -238,7 +241,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Freelance", " Urgent"],
-    status: "Close",
+    status: "Close"
   },
   {
     id: 7,
@@ -250,7 +253,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Full Time"],
-    status: "Active",
+    status: "Active"
   },
   {
     id: 8,
@@ -262,7 +265,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Full Time", " Freelance"],
-    status: "New",
+    status: "New"
   },
   {
     id: 9,
@@ -274,7 +277,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Part Time", " Freelance"],
-    status: "Active",
+    status: "Active"
   },
   {
     id: 10,
@@ -286,7 +289,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Full Time", "Freelance", " Urgent"],
-    status: "Active",
+    status: "Active"
   },
   {
     id: 11,
@@ -298,7 +301,7 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Part Time"],
-    status: "Active",
+    status: "Active"
   },
   {
     id: 12,
@@ -310,8 +313,8 @@ const jobGrid = [
     description:
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     requirement: ["Full Time", " Private"],
-    status: "New",
-  },
+    status: "New"
+  }
 ];
 
 const overviewJobs = [
@@ -328,7 +331,7 @@ const overviewJobs = [
     s1: "Full Time",
     s2: "Freelance",
     s3: "Urgent",
-    status: "Active",
+    status: "Active"
   },
   {
     id: 2,
@@ -342,7 +345,7 @@ const overviewJobs = [
       "As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent.",
     s1: "Part Time",
     s2: "Freelance",
-    status: "New",
+    status: "New"
   },
   {
     id: 3,
@@ -357,7 +360,7 @@ const overviewJobs = [
     requirement: ["Full Time", " Private"],
     s1: "Full Time",
     s2: "Private",
-    status: "Active",
+    status: "Active"
   },
   {
     id: 4,
@@ -373,7 +376,7 @@ const overviewJobs = [
     s1: "Full Time",
     s2: "Freelance",
     s3: "Urgent",
-    status: "New",
+    status: "New"
   },
   {
     id: 5,
@@ -388,7 +391,7 @@ const overviewJobs = [
     requirement: ["Part Time"],
     s1: "Part Time",
 
-    status: "Active",
+    status: "Active"
   },
   {
     id: 6,
@@ -403,8 +406,8 @@ const overviewJobs = [
     requirement: ["Freelance", " Urgent"],
     s1: "Freelance",
     s2: "Urgent",
-    status: "Close",
-  },
+    status: "Close"
+  }
 ];
 
 const jobCandidatesList = [
@@ -416,7 +419,7 @@ const jobCandidatesList = [
     location: "Cullera, Spain",
     type: ["Part Time", "danger"],
     rating: ["4.2", "2.2k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 2,
@@ -426,7 +429,7 @@ const jobCandidatesList = [
     location: "San Lorenzo",
     type: ["Full Time", "success"],
     rating: ["4.1", "1.72k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 3,
@@ -437,7 +440,7 @@ const jobCandidatesList = [
     location: "Cullera, Spain",
     type: ["Freelancer", "primary"],
     rating: ["4.0", "42.5k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 4,
@@ -447,7 +450,7 @@ const jobCandidatesList = [
     location: "Ugashik, US",
     type: ["Part Time", "danger"],
     rating: ["4.3", "15k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 5,
@@ -457,7 +460,7 @@ const jobCandidatesList = [
     location: "Zuweihir, UAE",
     type: ["Freelancer", "primary"],
     rating: ["3.5", "7.3k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 6,
@@ -467,7 +470,7 @@ const jobCandidatesList = [
     location: "Limestone, US",
     type: ["Part Time", "danger"],
     rating: ["4.3", "13.2k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 7,
@@ -477,7 +480,7 @@ const jobCandidatesList = [
     location: "Germany",
     type: ["Part Time", "danger"],
     rating: ["3.5", "7.3k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 8,
@@ -488,8 +491,8 @@ const jobCandidatesList = [
     location: "Zuweihir, UAE",
     type: ["Full Time", "success"],
     rating: ["4.1", "1.74k Ratings"],
-    bookmark: true,
-  },
+    bookmark: true
+  }
   // {
   //   id: 9,
 
@@ -664,7 +667,7 @@ const jobCandidates = [
     location: "Cullera, Spain",
     type: ["Part Time", "danger"],
     rating: ["4.2", "2.2k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 2,
@@ -674,7 +677,7 @@ const jobCandidates = [
     location: "San Lorenzo",
     type: ["Full Time", "success"],
     rating: ["4.1", "1.72k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 3,
@@ -685,7 +688,7 @@ const jobCandidates = [
     location: "Cullera, Spain",
     type: ["Freelancer", "primary"],
     rating: ["4.0", "42.5k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 4,
@@ -695,7 +698,7 @@ const jobCandidates = [
     location: "Ugashik, US",
     type: ["Part Time", "danger"],
     rating: ["4.3", "15k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 5,
@@ -705,7 +708,7 @@ const jobCandidates = [
     location: "Zuweihir, UAE",
     type: ["Freelancer", "primary"],
     rating: ["3.5", "7.3k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 6,
@@ -715,7 +718,7 @@ const jobCandidates = [
     location: "Limestone, US",
     type: ["Part Time", "danger"],
     rating: ["4.3", "13.2k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 7,
@@ -725,7 +728,7 @@ const jobCandidates = [
     location: "Germany",
     type: ["Part Time", "danger"],
     rating: ["3.5", "7.3k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 8,
@@ -736,7 +739,7 @@ const jobCandidates = [
     location: "Zuweihir, UAE",
     type: ["Full Time", "success"],
     rating: ["4.1", "1.74k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 9,
@@ -747,7 +750,7 @@ const jobCandidates = [
     location: "San Lorenzo",
     type: ["Full Time", "success"],
     rating: ["4.0", "1.72k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 10,
@@ -757,7 +760,7 @@ const jobCandidates = [
     location: "Texanna, US",
     type: ["Full Time", "success"],
     rating: ["4.2", "3.21k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 11,
@@ -767,7 +770,7 @@ const jobCandidates = [
     location: "Cullera, Spain",
     type: ["Part Time", "danger"],
     rating: ["4.2", "2.2k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 12,
@@ -777,7 +780,7 @@ const jobCandidates = [
     location: "Zuweihir, UAE",
     type: ["Full Time", "success"],
     rating: ["4.0", "3.2k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 13,
@@ -787,7 +790,7 @@ const jobCandidates = [
     location: "Muhtarqah, UAE",
     type: ["Freelancer", "primary"],
     rating: ["3.9", "98.65k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 14,
@@ -797,7 +800,7 @@ const jobCandidates = [
     location: "Pahoa, US",
     type: ["Freelancer", "primary"],
     rating: ["4.3", "2.93k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 15,
@@ -807,7 +810,7 @@ const jobCandidates = [
     location: "Phoenix, Arizona",
     type: ["Part Time", "danger"],
     rating: ["3.8", "10.32k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 16,
@@ -818,7 +821,7 @@ const jobCandidates = [
     location: "Ghurayfah, UAE",
     type: ["Full Time", "success"],
     rating: ["4.0", "7.63k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 17,
@@ -828,7 +831,7 @@ const jobCandidates = [
     location: "Maidaq, UAE",
     type: ["Part Time", "danger"],
     rating: ["3.9", "1.35k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 18,
@@ -838,7 +841,7 @@ const jobCandidates = [
     location: "Quesada, US",
     type: ["Freelancer", "primary"],
     rating: ["4.2", "3.16k Ratings"],
-    bookmark: false,
+    bookmark: false
   },
   {
     id: 19,
@@ -848,7 +851,7 @@ const jobCandidates = [
     location: "Cullera, Spain",
     type: ["Full Time", "success"],
     rating: ["4.0", "3.21k Ratings"],
-    bookmark: true,
+    bookmark: true
   },
   {
     id: 20,
@@ -858,8 +861,8 @@ const jobCandidates = [
     location: "Jereirah, UAE",
     type: ["Full Time", "success"],
     rating: ["4.1", "4.31k Ratings"],
-    bookmark: false,
-  },
+    bookmark: false
+  }
   // {
   //   id: 21,
 
@@ -909,92 +912,92 @@ const jobCategories = [
     id: 1,
     icon: "https://cdn.lordicon.com/xulniijg.json",
     lable: " Bussiness Development",
-    position: "26 Position",
+    position: "26 Position"
   },
   {
     id: 2,
     icon: "https://cdn.lordicon.com/oclwxpmm.json",
     lable: " Automotive Jobs",
-    position: "346 Position",
+    position: "346 Position"
   },
   {
     id: 3,
     icon: "https://cdn.lordicon.com/dklbhvrt.json",
     lable: "Construction / Facilities",
-    position: "126 Position",
+    position: "126 Position"
   },
   {
     id: 4,
     icon: "https://cdn.lordicon.com/adwosptt.json",
     lable: "Design, Art & Multimedia",
-    position: "234 Position",
+    position: "234 Position"
   },
   {
     id: 5,
     icon: "https://cdn.lordicon.com/kkcllwsu.json",
     lable: "Healthcare",
-    position: "746 Position",
+    position: "746 Position"
   },
   {
     id: 6,
     icon: "https://cdn.lordicon.com/rahcoaeu.json",
     lable: "Sale & Marketing",
-    position: "124 Position",
+    position: "124 Position"
   },
   {
     id: 7,
     icon: "https://cdn.lordicon.com/smauprql.json",
     lable: "Accounting / Finance",
-    position: "234 Position",
+    position: "234 Position"
   },
   {
     id: 8,
     icon: "https://cdn.lordicon.com/itykargr.json",
     lable: "Project Management",
-    position: "34 Position",
+    position: "34 Position"
   },
   {
     id: 9,
     icon: "https://cdn.lordicon.com/cnyeuzxc.json",
     lable: "Costomer Services",
-    position: "54 Position",
+    position: "54 Position"
   },
   {
     id: 10,
     icon: "https://cdn.lordicon.com/sygggnra.json",
     lable: "Content Writer",
-    position: "345 Position",
+    position: "345 Position"
   },
   {
     id: 11,
     icon: "https://cdn.lordicon.com/hfmdczge.json",
     lable: "Goverment Jobs",
-    position: "634 Position",
+    position: "634 Position"
   },
   {
     id: 12,
     icon: "https://cdn.lordicon.com/xhebrhsj.json",
     lable: "Digital Marketing",
-    position: "632 Position",
+    position: "632 Position"
   },
   {
     id: 13,
     icon: "https://cdn.lordicon.com/ucvsemjq.json",
     lable: "Education & Training",
-    position: "235 Position",
+    position: "235 Position"
   },
   {
     id: 14,
     icon: "https://cdn.lordicon.com/pvbjsfif.json",
     lable: "IT & Software",
-    position: "239 Position",
+    position: "239 Position"
   },
   {
     id: 15,
     icon: "https://cdn.lordicon.com/auvicynv.json",
     lable: "Catering & Tourism",
-    position: "765 Position",
-  },
+    position: "765 Position"
+  }
 ];
 const jobApplication = [
   {
@@ -1005,7 +1008,7 @@ const jobApplication = [
     date: "26 Sep, 2022",
     contacts: "734-544-2407",
     type: "Full Time",
-    status: "New",
+    status: "New"
   },
   {
     id: 2,
@@ -1015,7 +1018,7 @@ const jobApplication = [
     date: "26 Sep, 2022",
     contacts: "303-606-1985",
     type: "Part Time",
-    status: "New",
+    status: "New"
   },
   {
     id: 3,
@@ -1025,7 +1028,7 @@ const jobApplication = [
     date: "27 Sep, 2022",
     contacts: "610-440-0592",
     type: "Part Time",
-    status: "Rejected",
+    status: "Rejected"
   },
   {
     id: 4,
@@ -1035,7 +1038,7 @@ const jobApplication = [
     date: "28 Sep, 2022",
     contacts: "907-452-3702",
     type: "Full Time",
-    status: "Pending",
+    status: "Pending"
   },
   {
     id: 5,
@@ -1045,7 +1048,7 @@ const jobApplication = [
     date: "28 Sep, 2022",
     contacts: "803-740-3309",
     type: "Part Time",
-    status: "Approved",
+    status: "Approved"
   },
   {
     id: 6,
@@ -1055,7 +1058,7 @@ const jobApplication = [
     date: "29 Sep, 2022",
     contacts: "563-940-8926",
     type: "Part Time",
-    status: "New",
+    status: "New"
   },
   {
     id: 7,
@@ -1065,7 +1068,7 @@ const jobApplication = [
     date: "29 Sep, 2022",
     contacts: "352-403-5870",
     type: "Full Time",
-    status: "Pending",
+    status: "Pending"
   },
   {
     id: 8,
@@ -1075,7 +1078,7 @@ const jobApplication = [
     date: "29 Sep, 2022",
     contacts: "517-745-4446",
     type: "Part Time",
-    status: "New",
+    status: "New"
   },
   {
     id: 9,
@@ -1085,7 +1088,7 @@ const jobApplication = [
     date: "30 Sep, 2022",
     contacts: "814-434-0128",
     type: "Part Time",
-    status: "Approved",
+    status: "Approved"
   },
   {
     id: 10,
@@ -1095,7 +1098,7 @@ const jobApplication = [
     date: "01 Sep, 2022",
     contacts: "304-338-0822",
     type: "Part Time",
-    status: "Pending",
+    status: "Pending"
   },
   {
     id: 11,
@@ -1105,7 +1108,7 @@ const jobApplication = [
     date: "02 Sep, 2022",
     contacts: "320-336-1796",
     type: "Full Time",
-    status: "New",
+    status: "New"
   },
   {
     id: 12,
@@ -1115,8 +1118,8 @@ const jobApplication = [
     date: "02 Sep, 2022",
     contacts: "785-685-4616",
     type: "Full Time",
-    status: "Rejected",
-  },
+    status: "Rejected"
+  }
 ];
 const jobCompanies = [
   {
@@ -1132,7 +1135,7 @@ const jobCompanies = [
     rating: "4.8",
     website: "www.martinsolution.com",
     email: "info@martinsolution.com",
-    since: "1995",
+    since: "1995"
   },
   {
     id: "2",
@@ -1147,7 +1150,7 @@ const jobCompanies = [
     rating: "4.4",
     website: "www.syntycesolution.com",
     email: "info@syntycesolution.com",
-    since: "2001",
+    since: "2001"
   },
   {
     id: "3",
@@ -1162,7 +1165,7 @@ const jobCompanies = [
     rating: "4.2",
     website: "-",
     email: "email@moeticfashion.com",
-    since: "2000",
+    since: "2000"
   },
   {
     id: "4",
@@ -1177,7 +1180,7 @@ const jobCompanies = [
     rating: "4.5",
     website: "www.meta4systems.com",
     email: "support@meta4systems.com",
-    since: "2019",
+    since: "2019"
   },
   {
     id: "5",
@@ -1192,7 +1195,7 @@ const jobCompanies = [
     rating: "4.1",
     website: "-",
     email: "-",
-    since: "2018",
+    since: "2018"
   },
   {
     id: "6",
@@ -1207,7 +1210,7 @@ const jobCompanies = [
     rating: "4.5",
     website: "www.microdesign.com",
     email: "info@microdesign.com",
-    since: "2016",
+    since: "2016"
   },
   {
     id: "7",
@@ -1222,7 +1225,7 @@ const jobCompanies = [
     rating: "3.9",
     website: "-",
     email: "info@zoeticfashion.com",
-    since: "2018",
+    since: "2018"
   },
   {
     id: "8",
@@ -1237,7 +1240,7 @@ const jobCompanies = [
     rating: "4.0",
     website: "-",
     email: "-",
-    since: "2014",
+    since: "2014"
   },
   {
     id: "9",
@@ -1252,7 +1255,7 @@ const jobCompanies = [
     rating: "4.4",
     website: "-",
     email: "info@erlebacher.com",
-    since: "2016",
+    since: "2016"
   },
   {
     id: "10",
@@ -1267,7 +1270,7 @@ const jobCompanies = [
     rating: "4.5",
     website: "-",
     email: "info@itest.com",
-    since: "2016",
+    since: "2016"
   },
   {
     id: "11",
@@ -1282,7 +1285,7 @@ const jobCompanies = [
     rating: "4.7",
     website: "www.zoeticfashion.com",
     email: "info@zoeticfashion.com",
-    since: "2015",
+    since: "2015"
   },
   {
     id: "12",
@@ -1297,7 +1300,7 @@ const jobCompanies = [
     rating: "4.6",
     website: "www.microdesign.com",
     email: "info@microdesign.com",
-    since: "2014",
+    since: "2014"
   },
   {
     id: "13",
@@ -1312,7 +1315,7 @@ const jobCompanies = [
     rating: "4.2",
     website: "www.syntycesolutions.com",
     email: "support@syntycesolutions.com",
-    since: "2016",
+    since: "2016"
   },
   {
     id: "14",
@@ -1327,7 +1330,7 @@ const jobCompanies = [
     rating: "3.8",
     website: "www.asiaticsolution.com",
     email: "info@asiaticsolution.com",
-    since: "2019",
+    since: "2019"
   },
   {
     id: "15",
@@ -1342,7 +1345,7 @@ const jobCompanies = [
     rating: "4.0",
     website: "-",
     email: "-",
-    since: "2017",
+    since: "2017"
   },
   {
     id: "16",
@@ -1357,7 +1360,7 @@ const jobCompanies = [
     rating: "4.2",
     website: "www.kentssolution.com",
     email: "info@kentssolution.com",
-    since: "2018",
+    since: "2018"
   },
   {
     id: "17",
@@ -1372,7 +1375,7 @@ const jobCompanies = [
     rating: "4.2",
     website: "www.syntycesolutions.com",
     email: "support@syntycesolutions.com",
-    since: "2016",
+    since: "2016"
   },
   {
     id: "18",
@@ -1387,7 +1390,7 @@ const jobCompanies = [
     rating: "4.4",
     website: "www.syntycesolution.com",
     email: "info@syntycesolution.com",
-    since: "2001",
+    since: "2001"
   },
   {
     id: "19",
@@ -1402,7 +1405,7 @@ const jobCompanies = [
     rating: "4.5",
     website: "-",
     email: "info@itest.com",
-    since: "2016",
+    since: "2016"
   },
   {
     id: "20",
@@ -1417,8 +1420,8 @@ const jobCompanies = [
     rating: "3.9",
     website: "-",
     email: "info@zoeticfashion.com",
-    since: "2018",
-  },
+    since: "2018"
+  }
 ];
 export {
   jobWidgets,
@@ -1429,5 +1432,5 @@ export {
   jobCandidates,
   jobCategories,
   jobApplication,
-  jobCompanies,
+  jobCompanies
 };

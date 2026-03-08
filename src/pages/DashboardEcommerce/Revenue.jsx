@@ -5,6 +5,9 @@ import CountUpRaw from "react-countup";
 import { useSelector, useDispatch } from "react-redux";
 import { getRevenueChartsData } from "../../store/dashboardEcommerce/action";
 const CountUp = CountUpRaw.default ? CountUpRaw.default : CountUpRaw;
+import appCommon from "@common/app";
+
+const { brandPrefix } = appCommon;
 
 const Revenue = () => {
   const dispatch = useDispatch();
@@ -126,7 +129,7 @@ const Revenue = () => {
             <div className="apex-charts" dir="ltr">
               <RevenueCharts
                 series={chartData}
-                dataColors='["--vz-success", "--vz-info", "--vz-danger"]'
+                dataColors={`["--${brandPrefix}-success", "--${brandPrefix}-info", "--${brandPrefix}-danger"]`}
               />
             </div>
           </div>
