@@ -9,6 +9,8 @@ import ForgetSaga from "./auth/forgetpwd/saga";
 import ProfileSaga from "./auth/profile/saga";
 // Dashboard Ecommerce
 import dashboardEcommerceSaga from "./dashboardEcommerce/saga";
+//ecommerce
+import ecommerceSaga from "./ecommerce/saga";
 
 export default function* rootSaga() {
   yield all([
@@ -18,6 +20,7 @@ export default function* rootSaga() {
     fork(AuthSaga),
     fork(ForgetSaga),
     fork(ProfileSaga),
-    fork(dashboardEcommerceSaga)
+    fork(dashboardEcommerceSaga),
+    fork(ecommerceSaga)
   ]);
 }

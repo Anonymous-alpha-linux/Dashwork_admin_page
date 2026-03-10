@@ -4,76 +4,14 @@ import * as url from "../url_helper";
 import { accessToken, nodeApiToken } from "../jwt-token-access/accessToken";
 
 import {
-  calenderDefaultCategories,
-  events,
-  defaultevent,
-  direactContact,
-  messages,
-  channelsList,
-  projectList,
-  sellersList,
-  transactions,
-  CryptoOrders,
-  jobApplication,
-  deals,
-  mailbox,
-  allData,
-  monthData,
-  halfyearData,
-  allaudiencesMetricsData,
-  monthaudiencesMetricsData,
-  halfyearaudiencesMetricsData,
-  yaeraudiencesMetricsData,
-  todayDeviceData,
-  lastWeekDeviceData,
-  lastMonthDeviceData,
-  currentYearDeviceData,
-  todayBalanceData,
-  lastWeekBalanceData,
-  lastMonthBalanceData,
-  currentYearBalanceData,
-  todayDealData,
-  weeklyDealData,
-  monthlyDealData,
-  yealyDealData,
-  octData,
-  novData,
-  decData,
-  janData,
   allRevenueData,
   monthRevenueData,
   halfYearRevenueData,
   yearRevenueData,
-  btcPortfolioData,
-  usdPortfolioData,
-  euroPortfolioData,
-  MarketGraphAll,
-  MarketGraphYear,
-  MarketGraphMonth,
-  MarketGraphWeek,
-  MarketGraphHour,
-  allProjectData,
-  monthProjectData,
-  halfyearProjectData,
-  yearProjectData,
-  allTimeData,
-  lastWeekData,
-  lastMonthData,
-  lastquarterData,
-  allMarketplaceData,
-  monthMarketplaceData,
-  halfyearMarketplaceData,
-  yearMarketplaceData,
-  todayaudiencesCountryData,
-  lastWeekaudiencesCountryData,
-  lastMonthaudiencesCountryData,
-  currentyearaudiencesCountryData,
-  team,
-  folderList,
-  recentFile,
-  todoTaskList,
-  todoCollapse,
-  apiKey
+  productsData,
+  orders,
+  customerList,
+  sellersList
 } from "../../common/data";
 
 let users = [
@@ -242,6 +180,62 @@ const fakeBackend = () => {
           resolve([200, yearRevenueData]);
         } else {
           reject([400, "Cannot get Year Revenue Data"]);
+        }
+      });
+    });
+  });
+
+  // Ecommerce
+  mock.onGet(url.GET_PRODUCTS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (productsData) {
+          // Passing fake JSON data as response
+          resolve([200, productsData]);
+        } else {
+          reject([400, "Cannot get Product List Data"]);
+        }
+      });
+    });
+  });
+
+  // Order
+  mock.onGet(url.GET_ORDERS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (orders) {
+          // Passing fake JSON data as response
+          resolve([200, orders]);
+        } else {
+          reject([400, "Cannot get Order List Data"]);
+        }
+      });
+    });
+  });
+
+  // Customer
+  mock.onGet(url.GET_CUSTOMERS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (customerList) {
+          // Passing fake JSON data as response
+          resolve([200, customerList]);
+        } else {
+          reject([400, "Cannot get Customer List Data"]);
+        }
+      });
+    });
+  });
+
+  // Seller
+  mock.onGet(url.GET_SELLERS).reply(() => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (sellersList) {
+          // Passing fake JSON data as response
+          resolve([200, sellersList]);
+        } else {
+          reject([400, "Cannot get Customer List Data"]);
         }
       });
     });

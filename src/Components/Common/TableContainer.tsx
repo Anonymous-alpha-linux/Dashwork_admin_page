@@ -1,15 +1,18 @@
 import React, { Fragment } from "react";
-import PropTypes from "prop-types";
 import {
-  useTable,
-  useGlobalFilter,
-  useAsyncDebounce,
-  useSortBy,
-  useFilters,
-  useExpanded,
-  usePagination,
-  useRowSelect
-} from "react-table";
+  useReactTable,
+  GlobalFiltering,
+  ColumnFiltering,
+  RowSorting,
+  RowExpanding,
+  RowPagination,
+  RowSelection,
+  getCoreRowModel,
+  flexRender,
+  ColumnDef,
+  Column
+} from "@tanstack/react-table";
+import { useDebouncedCallback as useAsyncDebounce } from "use-debounce";
 import { Table, Row, Col, Button, Input, CardBody } from "reactstrap";
 import { Filter, DefaultColumnFilter } from "./filters";
 import {
@@ -25,7 +28,23 @@ import {
   NFTRankingGlobalFilter,
   TaskListGlobalFilter
 } from "./GlobalSearchFilter";
-
+import classNames from "classnames";
+type GlobalFilterProps = {  
+  preGlobalFilteredRows: any,
+  globalFilter: any,
+  setGlobalFilter: any,
+  isCustomerFilter: boolean,
+  isOrderFilter: boolean,
+  isContactsFilter: boolean,
+  isCompaniesFilter: boolean,
+  isCryptoOrdersFilter: boolean,
+  isInvoiceListFilter: boolean,
+  isTicketsListFilter: boolean,
+  isNFTRankingFilter: boolean,
+  isTaskListFilter: boolean,
+  isProductsFilter: boolean,
+  isLeadsFilter: boolean,
+  SearchPlaceholder: any}
 // Define a default UI for filtering
 function GlobalFilter({
   preGlobalFilteredRows,
@@ -43,10 +62,10 @@ function GlobalFilter({
   isProductsFilter,
   isLeadsFilter,
   SearchPlaceholder
-}) {
+}: GlobalFilterProps) {
   const count = preGlobalFilteredRows.length;
   const [value, setValue] = React.useState(globalFilter);
-  const onChange = useAsyncDebounce((value) => {
+  const onChange = useAsyncDebounce((value: any) => {
     setGlobalFilter(value || undefined);
   }, 200);
 
@@ -80,7 +99,7 @@ function GlobalFilter({
                 <i className="bx bx-search-alt search-icon"></i>
               </div>
             </Col>
-            {isProductsFilter && <ProductsGlobalFilter />}
+            {/* {isProductsFilter && <ProductsGlobalFilter />}
             {isCustomerFilter && <CustomersGlobalFilter />}
             {isOrderFilter && <OrderGlobalFilter />}
             {isContactsFilter && <ContactsGlobalFilter />}
@@ -90,7 +109,7 @@ function GlobalFilter({
             {isInvoiceListFilter && <InvoiceListGlobalSearch />}
             {isTicketsListFilter && <TicketsListGlobalFilter />}
             {isNFTRankingFilter && <NFTRankingGlobalFilter />}
-            {isTaskListFilter && <TaskListGlobalFilter />}
+            {isTaskListFilter && <TaskListGlobalFilter />} */}
           </Row>
         </form>
       </CardBody>
@@ -98,7 +117,37 @@ function GlobalFilter({
   );
 }
 
-const TableContainer = ({
+type TableContainerProps<T> = {
+  columns: ColumnDef<T, any>[],
+  data: T[],
+  isGlobalSearch: boolean,
+  isGlobalFilter: boolean,
+  isProductsFilter: boolean,
+  isCustomerFilter: boolean,
+  isOrderFilter: boolean,
+  isContactsFilter: boolean,
+  isCompaniesFilter: boolean,
+  isLeadsFilter: boolean,
+  isCryptoOrdersFilter: boolean,
+  isInvoiceListFilter: boolean,
+  isTicketsListFilter: boolean,
+  isNFTRankingFilter: boolean,
+  isTaskListFilter: boolean,
+  isAddOptions: boolean,
+  isAddUserList: boolean,
+  isAddCustList:boolean,
+  handleOrderClicks: any,
+  handleUserClick: any,
+  handleCustomerClick: any,
+  customPageSize: any,
+  tableClass: string,
+  theadClass: string,
+  trClass: string,
+  thClass: string,
+  divClass: string,
+  SearchPlaceholder: any
+}
+const TableContainer = <T,>({
   columns,
   data,
   isGlobalSearch,
@@ -127,58 +176,55 @@ const TableContainer = ({
   thClass,
   divClass,
   SearchPlaceholder
-}) => {
+}: TableContainerProps<T>) => {
+  const table = useReactTable({
+    columns,
+    data,
+    defaultColumn: {},
+    initialState: {
+      pagination: {
+        pageIndex: 0,
+        pageSize: customPageSize,
+      },
+      rowSelection: {0: true},
+      sorting: [{id: 'product', desc: true}]
+    },
+    _features: [
+      GlobalFiltering,
+      ColumnFiltering,
+      RowSorting,
+      RowExpanding,
+      RowPagination,
+      RowSelection
+    ],
+    getCoreRowModel: getCoreRowModel()
+  });
   const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    page,
-    prepareRow,
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    gotoPage,
+    getHeaderGroups,
+    getRowModel,
+    getCanNextPage,
+    getCanPreviousPage,
+    getPageOptions,
+    getState,
+    setPageIndex,
     nextPage,
     previousPage,
     setPageSize,
-    state,
-    preGlobalFilteredRows,
-    setGlobalFilter,
-    state: { pageIndex, pageSize }
-  } = useTable(
-    {
-      columns,
-      data,
-      defaultColumn: { Filter: DefaultColumnFilter },
-      initialState: {
-        pageIndex: 0,
-        pageSize: customPageSize,
-        selectedRowIds: 0,
-        sortBy: [
-          {
-            desc: true
-          }
-        ]
-      }
-    },
-    useGlobalFilter,
-    useFilters,
-    useSortBy,
-    useExpanded,
-    usePagination,
-    useRowSelect
-  );
-
-  const generateSortingIndicator = (column) => {
-    return column.isSorted ? (column.isSortedDesc ? " " : "") : "";
+    getPreFilteredRowModel,
+    setGlobalFilter
+  } = table;
+  const generateSortingIndicator = (column: Column<typeof data[0]>) => {
+    
+    const sortType = column.getIsSorted();
+    return sortType === 'asc' ? "" : " ";
   };
 
-  const onChangeInSelect = (event) => {
+  const onChangeInSelect = (event: any) => {
     setPageSize(Number(event.target.value));
   };
-  const onChangeInInput = (event) => {
+  const onChangeInInput = (event:any) => {
     const page = event.target.value ? Number(event.target.value) - 1 : 0;
-    gotoPage(page);
+    setPageIndex(page);
   };
 
   return (
@@ -188,7 +234,7 @@ const TableContainer = ({
           <Col md={1}>
             <select
               className="form-select"
-              value={pageSize}
+              value={getState().pagination.pageSize}
               onChange={onChangeInSelect}
             >
               {[10, 20, 30, 40, 50].map((pageSize) => (
@@ -201,8 +247,8 @@ const TableContainer = ({
         )}
         {isGlobalFilter && (
           <GlobalFilter
-            preGlobalFilteredRows={preGlobalFilteredRows}
-            globalFilter={state.globalFilter}
+            preGlobalFilteredRows={getPreFilteredRowModel().rows}
+            globalFilter={getState().globalFilter}
             setGlobalFilter={setGlobalFilter}
             isProductsFilter={isProductsFilter}
             isCustomerFilter={isCustomerFilter}
@@ -265,23 +311,19 @@ const TableContainer = ({
         )}
       </Row>
 
-      <div className={divClass}>
-        <Table hover {...getTableProps()} className={tableClass}>
-          <thead className={theadClass}>
-            {headerGroups.map((headerGroup) => (
-              <tr
-                className={trClass}
-                key={headerGroup.id}
-                {...headerGroup.getHeaderGroupProps()}
-              >
-                {headerGroup.headers.map((column) => (
+      <div className={classNames(divClass, 'gridjs-wrapper')}>
+        <table className={classNames(tableClass, 'gridjs-table')}>
+          <thead className={classNames(theadClass, 'gridjs-thead')}>
+            {getHeaderGroups().map((headerGroup) => (
+              <tr className={trClass} key={headerGroup.id}>
+                {headerGroup.headers.map((header) => (
                   <th
-                    key={column.id}
-                    className={thClass}
-                    {...column.getSortByToggleProps()}
+                    key={header.id}
+                    className={classNames(thClass, 'gridjs-th')}
+                    {...header}
                   >
-                    {column.render("Header")}
-                    {generateSortingIndicator(column)}
+                    {flexRender(header.column.columnDef.header, header.getContext())}
+                    {generateSortingIndicator(header.column)}
                     {/* <Filter column={column} /> */}
                   </th>
                 ))}
@@ -289,16 +331,18 @@ const TableContainer = ({
             ))}
           </thead>
 
-          <tbody {...getTableBodyProps()}>
-            {page.map((row) => {
-              prepareRow(row);
+          <tbody className={"gridjs-tbody"}>
+            {getRowModel().rows.map((row) => {
               return (
-                <Fragment key={row.getRowProps().key}>
-                  <tr>
-                    {row.cells.map((cell) => {
+                <Fragment key={row.id}>
+                  <tr className={"gridjs-tr"}>
+                    {row.getVisibleCells().map((cell) => {
                       return (
-                        <td key={cell.id} {...cell.getCellProps()}>
-                          {cell.render("Cell")}
+                        <td key={cell.id}>
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
                         </td>
                       );
                     })}
@@ -307,7 +351,7 @@ const TableContainer = ({
               );
             })}
           </tbody>
-        </Table>
+        </table>
       </div>
 
       <Row className="justify-content-md-end justify-content-center align-items-center p-2">
@@ -316,7 +360,7 @@ const TableContainer = ({
             <Button
               color="primary"
               onClick={previousPage}
-              disabled={!canPreviousPage}
+              disabled={!getCanPreviousPage()}
             >
               {"<"}
             </Button>
@@ -325,7 +369,7 @@ const TableContainer = ({
         <Col className="col-md-auto d-none d-md-block">
           Page{" "}
           <strong>
-            {pageIndex + 1} of {pageOptions.length}
+            {table.getState().pagination.pageIndex + 1} of {getPageOptions().length}
           </strong>
         </Col>
         <Col className="col-md-auto">
@@ -333,15 +377,19 @@ const TableContainer = ({
             type="number"
             min={1}
             style={{ width: 70 }}
-            max={pageOptions.length}
-            defaultValue={pageIndex + 1}
+            max={getPageOptions().length}
+            defaultValue={getState().pagination.pageIndex + 1}
             onChange={onChangeInInput}
           />
         </Col>
 
         <Col className="col-md-auto">
           <div className="d-flex gap-1">
-            <Button color="primary" onClick={nextPage} disabled={!canNextPage}>
+            <Button
+              color="primary"
+              onClick={nextPage}
+              disabled={!getCanNextPage()}
+            >
               {">"}
             </Button>
           </div>
@@ -349,10 +397,6 @@ const TableContainer = ({
       </Row>
     </Fragment>
   );
-};
-
-TableContainer.propTypes = {
-  preGlobalFilteredRows: PropTypes.any
 };
 
 export default TableContainer;

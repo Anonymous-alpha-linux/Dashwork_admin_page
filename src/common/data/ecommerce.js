@@ -173,7 +173,7 @@ const productsData = [
     rating: 4.3,
     publishedDate: ["06 Jan, 2021", "01:31 PM"],
     categories: "furniture"
-  },
+  }
 ];
 
 // Ecommerce > Product Details
@@ -182,26 +182,26 @@ const productDetailsWidgets = [
     id: 1,
     icon: "ri-money-dollar-circle-fill",
     label: "Price",
-    labelDetail: "$120.40",
+    labelDetail: "$120.40"
   },
   {
     id: 2,
     icon: "ri-file-copy-2-fill",
     label: "No. of Orders",
-    labelDetail: "2,234",
+    labelDetail: "2,234"
   },
   {
     id: 3,
     icon: "ri-stack-fill",
     label: "Available Stocks",
-    labelDetail: "1,230",
+    labelDetail: "1,230"
   },
   {
     id: 4,
     icon: "ri-inbox-archive-fill",
     label: "Total Revenue",
-    labelDetail: "$60,645",
-  },
+    labelDetail: "$60,645"
+  }
 ];
 
 const reviews = [
@@ -214,30 +214,30 @@ const reviews = [
     subitem: [
       { id: 1, img: img12 },
       { id: 2, img: img11 },
-      { id: 3, img: img10 },
-    ],
+      { id: 3, img: img10 }
+    ]
   },
   {
     id: 2,
     rating: "4.0",
     comment: "Great at this price, Product quality and look is awesome.",
     name: "Nancy",
-    date: "06 Jul, 21",
+    date: "06 Jul, 21"
   },
   {
     id: 3,
     rating: "4.2",
     comment: "Good product. I am so happy.",
     name: "Joseph",
-    date: "06 Jul, 21",
+    date: "06 Jul, 21"
   },
   {
     id: 4,
     rating: "4.1",
     comment: "Nice Product, Good Quality.",
     name: "Jimmy",
-    date: "24 Jun, 21",
-  },
+    date: "24 Jun, 21"
+  }
 ];
 
 // Ecommerce > Orders
@@ -254,7 +254,7 @@ const orders = [
     amount: "$654",
     payment: "Mastercard",
     status: "Pending",
-    statusClass: "warning",
+    statusClass: "warning"
   },
   {
     id: 2,
@@ -267,7 +267,7 @@ const orders = [
     amount: "$354",
     payment: "Paypal",
     status: "Cancelled",
-    statusClass: "danger",
+    statusClass: "danger"
   },
   {
     id: 3,
@@ -280,7 +280,7 @@ const orders = [
     amount: "$829",
     payment: "Visa",
     status: "Inprogress",
-    statusClass: "secondary",
+    statusClass: "secondary"
   },
   {
     id: 4,
@@ -293,7 +293,7 @@ const orders = [
     amount: "$142",
     payment: "COD",
     status: "Pending",
-    statusClass: "warning",
+    statusClass: "warning"
   },
   {
     id: 5,
@@ -306,7 +306,7 @@ const orders = [
     amount: "$408",
     payment: "Mastercard",
     status: "Pickups",
-    statusClass: "info",
+    statusClass: "info"
   },
   {
     id: 6,
@@ -319,7 +319,7 @@ const orders = [
     amount: "$1240",
     payment: "Visa",
     status: "Inprogress",
-    statusClass: "secondary",
+    statusClass: "secondary"
   },
   {
     id: 7,
@@ -332,7 +332,7 @@ const orders = [
     amount: "$180",
     payment: "COD",
     status: "Returns",
-    statusClass: "primary",
+    statusClass: "primary"
   },
   {
     id: 8,
@@ -345,7 +345,7 @@ const orders = [
     amount: "$247",
     payment: "Paypal",
     status: "Delivered",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 9,
@@ -358,7 +358,7 @@ const orders = [
     amount: "$373",
     payment: "Visa",
     status: "Pickups",
-    statusClass: "info",
+    statusClass: "info"
   },
   {
     id: 10,
@@ -371,7 +371,7 @@ const orders = [
     amount: "$342",
     payment: "Mastercard",
     status: "Inprogress",
-    statusClass: "secondary",
+    statusClass: "secondary"
   },
   {
     id: 11,
@@ -384,7 +384,7 @@ const orders = [
     amount: "$874",
     payment: "Visa",
     status: "Delivered",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 12,
@@ -397,8 +397,8 @@ const orders = [
     amount: "$1021",
     payment: "Mastercard",
     status: "Cancelled",
-    statusClass: "danger",
-  },
+    statusClass: "danger"
+  }
 ];
 
 // Ecommerce > Order Details
@@ -412,7 +412,7 @@ const productDetails = [
     size: "M",
     price: "$119.99",
     quantity: "02",
-    amount: "$239.98",
+    amount: "$239.98"
   },
   {
     id: 2,
@@ -422,7 +422,7 @@ const productDetails = [
     size: "32.5mm",
     price: "$94.99",
     quantity: "01",
-    amount: "$94.99",
+    amount: "$94.99"
   },
   {
     id: 3,
@@ -432,8 +432,8 @@ const productDetails = [
     size: "350 ml",
     price: "$24.99",
     quantity: "01",
-    amount: "$24.99",
-  },
+    amount: "$24.99"
+  }
 ];
 
 // Ecommerce > Customers
@@ -443,122 +443,122 @@ const customerList = [
     id: 1,
     customerId: "#VZ2101",
     customer: "Mary Cousar",
-    email: "marycousar@velzon.com",
+    email: "marycousar@dashwork.com",
     phone: "580-464-4694",
     date: "06 Apr, 2021",
     status: "Active",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 2,
     customerId: "#VZ2102",
     customer: "Jeff Taylor",
-    email: "jefftaylor@velzon.com",
+    email: "jefftaylor@dashwork.com",
     phone: "863-577-5537",
     date: "15 Feb, 2021",
     status: "Active",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 3,
     customerId: "#VZ2103",
     customer: "Robert McMahon",
-    email: "robertmcmahon@velzon.com",
+    email: "robertmcmahon@dashwork.com",
     phone: "786-253-9927",
     date: "12 Jan, 2021",
     status: "Active",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 4,
     customerId: "#VZ2104",
     customer: "Michael Morris",
-    email: "michaelmorris@velzon.com",
+    email: "michaelmorris@dashwork.com",
     phone: "805-447-8398",
     date: "19 May, 2021",
     status: "Block",
-    statusClass: "danger",
+    statusClass: "danger"
   },
   {
     id: 5,
     customerId: "#VZ2105",
     customer: "Kevin Dawson",
-    email: "kevindawson@velzon.com",
+    email: "kevindawson@dashwork.com",
     phone: "213-741-4294",
     date: "14 Apr, 2021",
     status: "Active",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 6,
     customerId: "#VZ2106",
     customer: "Carolyn Jones",
-    email: "carolynjones@velzon.com",
+    email: "carolynjones@dashwork.com",
     phone: "414-453-5725",
     date: "07 Jun, 2021",
     status: "Active",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 7,
     customerId: "#VZ2107",
     customer: "Glen Matney",
-    email: "glenmatney@velzon.com",
+    email: "glenmatney@dashwork.com",
     phone: "515-395-1069",
     date: "02 Nov, 2021",
     status: "Active",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 8,
     customerId: "#VZ2108",
     customer: "Charles Kubik",
-    email: "charleskubik@velzon.com",
+    email: "charleskubik@dashwork.com",
     phone: "231-480-8536",
     date: "25 Sep, 2021",
     status: "Block",
-    statusClass: "danger",
+    statusClass: "danger"
   },
   {
     id: 9,
     customerId: "#VZ2109",
     customer: "Herbert Stokes",
-    email: "herbertstokes@velzon.com",
+    email: "herbertstokes@dashwork.com",
     phone: "312-944-1448",
     date: "20 Jul, 2021",
     status: "Block",
-    statusClass: "danger",
+    statusClass: "danger"
   },
   {
     id: 10,
     customerId: "#VZ21010",
     customer: "Timothy Smith",
-    email: "timothysmith@velzon.com",
+    email: "timothysmith@dashwork.com",
     phone: "973-277-6950",
     date: "13 Dec, 2021",
     status: "Active",
-    statusClass: "success",
+    statusClass: "success"
   },
   {
     id: 11,
     customerId: "#VZ21011",
     customer: "Johnny Evans",
-    email: "johnnyevans@velzon.com",
+    email: "johnnyevans@dashwork.com",
     phone: "407-645-1767",
     date: "01 Oct, 2021",
     status: "Block",
-    statusClass: "danger",
+    statusClass: "danger"
   },
   {
     id: 12,
     customerId: "#VZ21012",
     customer: "Kevin Dawson",
-    email: "kevindawson@velzon.com",
+    email: "kevindawson@dashwork.com",
     phone: "213-741-4294",
     date: "14 Apr, 2021",
     status: "Active",
-    statusClass: "success",
-  },
+    statusClass: "success"
+  }
 ];
 
 // Ecommerce > Shopping Cart
@@ -572,7 +572,7 @@ const shoppingCart = [
     size: "M",
     data_attr: 1,
     price: 119.99,
-    total: 119.99,
+    total: 119.99
   },
   {
     id: 2,
@@ -582,7 +582,7 @@ const shoppingCart = [
     size: "32.5mm",
     data_attr: 1,
     price: 94.99,
-    total: 94.99,
+    total: 94.99
   },
   {
     id: 3,
@@ -592,8 +592,8 @@ const shoppingCart = [
     size: "350 ml",
     data_attr: 1,
     price: 24.99,
-    total: 24.99,
-  },
+    total: 24.99
+  }
 ];
 
 // Ecommerce > Checkout
@@ -622,7 +622,7 @@ const orderSummary = [
     price: 24.99,
     quantity: 1,
     total: 24.99
-  },
+  }
 ];
 
 // Ecommerce > Sellers
@@ -638,7 +638,7 @@ const sellersList = [
     chartdata: [12, 14, 2, 47, 42, 15, 47, 75, 65, 19, 14],
     color: "#f06548",
     balance: "$45,415",
-    category:"Health & Medicine"
+    category: "Health & Medicine"
   },
   {
     id: 2,
@@ -650,7 +650,7 @@ const sellersList = [
     chartdata: [12, 14, 2, 47, 42, 15, 35, 75, 20, 67, 89],
     color: "#13c56b",
     balance: "$97,642",
-    category:"Manufacturer"
+    category: "Manufacturer"
   },
   {
     id: 3,
@@ -662,7 +662,7 @@ const sellersList = [
     chartdata: [45, 20, 8, 42, 30, 5, 35, 79, 22, 54, 64],
     color: "#f7b84b",
     balance: "$27,102",
-    category:"Manufacturer"
+    category: "Manufacturer"
   },
   {
     id: 4,
@@ -674,7 +674,7 @@ const sellersList = [
     chartdata: [26, 15, 48, 12, 47, 19, 35, 19, 85, 68, 50],
     color: "#13c56b",
     balance: "$14,933",
-    category:"Food Service"
+    category: "Food Service"
   },
   {
     id: 5,
@@ -686,7 +686,7 @@ const sellersList = [
     chartdata: [60, 67, 12, 49, 6, 78, 63, 51, 33, 8, 16],
     color: "#f7b84b",
     balance: "$73,426",
-    category:"Computers & Electronics"
+    category: "Computers & Electronics"
   },
   {
     id: 6,
@@ -698,7 +698,7 @@ const sellersList = [
     chartdata: [78, 63, 51, 33, 8, 16, 60, 67, 12, 49],
     color: "#13c56b",
     balance: "$34,241",
-    category:"Computers & Electronics"
+    category: "Computers & Electronics"
   },
   {
     id: 7,
@@ -710,7 +710,7 @@ const sellersList = [
     chartdata: [15, 35, 75, 20, 67, 8, 42, 30, 5, 35],
     color: "#f06548",
     balance: "$17,200",
-    category:"Manufacturer"
+    category: "Manufacturer"
   },
   {
     id: 8,
@@ -722,8 +722,8 @@ const sellersList = [
     chartdata: [45, 32, 68, 55, 36, 10, 48, 25, 74, 54],
     color: "#f7b84b",
     balance: "$97,642",
-    category:"Retailer"
-  },
+    category: "Retailer"
+  }
 ];
 
 // Ecommerce > Seller Details > Revenue
@@ -765,9 +765,8 @@ const revenueWidgets = [
     prefix: "",
     separator: "",
     suffix: "%"
-  },
+  }
 ];
-
 
 // Ecommerce > Seller Details > Products Review
 
@@ -782,8 +781,8 @@ const productsReview = [
       { id: 2, icon: "ri-star-fill" },
       { id: 3, icon: "ri-star-fill" },
       { id: 4, icon: "ri-star-fill" },
-      { id: 5, icon: "ri-star-fill" },
-    ],
+      { id: 5, icon: "ri-star-fill" }
+    ]
   },
   {
     id: 2,
@@ -795,8 +794,8 @@ const productsReview = [
       { id: 2, icon: "ri-star-fill" },
       { id: 3, icon: "ri-star-fill" },
       { id: 4, icon: "ri-star-fill" },
-      { id: 5, icon: "ri-star-half-fill" },
-    ],
+      { id: 5, icon: "ri-star-half-fill" }
+    ]
   },
   {
     id: 3,
@@ -808,8 +807,8 @@ const productsReview = [
       { id: 2, icon: "ri-star-fill" },
       { id: 3, icon: "ri-star-fill" },
       { id: 4, icon: "ri-star-line" },
-      { id: 5, icon: "ri-star-line" },
-    ],
+      { id: 5, icon: "ri-star-line" }
+    ]
   },
   {
     id: 4,
@@ -821,9 +820,21 @@ const productsReview = [
       { id: 2, icon: "ri-star-fill" },
       { id: 3, icon: "ri-star-fill" },
       { id: 4, icon: "ri-star-half-fill" },
-      { id: 5, icon: "ri-star-line" },
-    ],
-  },
+      { id: 5, icon: "ri-star-line" }
+    ]
+  }
 ];
 
-export { productsData, productDetailsWidgets, reviews, orders, productDetails, customerList, shoppingCart, orderSummary, sellersList, revenueWidgets, productsReview };
+export {
+  productsData,
+  productDetailsWidgets,
+  reviews,
+  orders,
+  productDetails,
+  customerList,
+  shoppingCart,
+  orderSummary,
+  sellersList,
+  revenueWidgets,
+  productsReview
+};
