@@ -48,7 +48,7 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
 // Register the plugins
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 
-const EcommerceAddProduct = (props) => {
+const EcommerceAddProduct = () => {
   document.title =
     "Create Product | Dashwork - React Admin & Dashboard Template";
 
