@@ -12,6 +12,9 @@ import Profile from "./auth/profile/reducer";
 // Dashboard Ecommerce
 import DashboardEcommerce from "./dashboardEcommerce/reducer";
 
+//Ecommerce
+import Ecommerce from "./ecommerce/reducer";
+
 const rootReducer = combineReducers({
   // public
   Login,
@@ -19,7 +22,8 @@ const rootReducer = combineReducers({
   ForgetPassword,
   Profile,
   DashboardEcommerce,
-  Layout
+  Layout,
+  Ecommerce
 });
 
 export default rootReducer;

@@ -18,41 +18,7 @@ const useMenuData = () => {
   const [isMultiLevel, setIsMultiLevel] = useState(false);
 
   // Apps
-  const [isEmail, setEmail] = useState(false);
-  const [isSubEmail, setSubEmail] = useState(false);
   const [isEcommerce, setIsEcommerce] = useState(false);
-  const [isProjects, setIsProjects] = useState(false);
-  const [isTasks, setIsTasks] = useState(false);
-  const [isCRM, setIsCRM] = useState(false);
-  const [isCrypto, setIsCrypto] = useState(false);
-  const [isInvoices, setIsInvoices] = useState(false);
-  const [isSupportTickets, setIsSupportTickets] = useState(false);
-  const [isNFTMarketplace, setIsNFTMarketplace] = useState(false);
-  const [isJobs, setIsJobs] = useState(false);
-  const [isJobList, setIsJobList] = useState(false);
-  const [isCandidateList, setIsCandidateList] = useState(false);
-
-  // Authentication
-  const [isSignIn, setIsSignIn] = useState(false);
-  const [isSignUp, setIsSignUp] = useState(false);
-  const [isPasswordReset, setIsPasswordReset] = useState(false);
-  const [isPasswordCreate, setIsPasswordCreate] = useState(false);
-  const [isLockScreen, setIsLockScreen] = useState(false);
-  const [isLogout, setIsLogout] = useState(false);
-  const [isSuccessMessage, setIsSuccessMessage] = useState(false);
-  const [isVerification, setIsVerification] = useState(false);
-  const [isError, setIsError] = useState(false);
-
-  // Pages
-  const [isProfile, setIsProfile] = useState(false);
-  const [isLanding, setIsLanding] = useState(false);
-
-  // Charts
-  const [isApex, setIsApex] = useState(false);
-
-  // Multi Level
-  const [isLevel1, setIsLevel1] = useState(false);
-  const [isLevel2, setIsLevel2] = useState(false);
 
   const [iscurrentState, setIscurrentState] = useState("Dashboard");
 
@@ -112,9 +78,6 @@ const useMenuData = () => {
       history("/widgets");
       document.body.classList.add("twocolumn-panel");
     }
-    if (iscurrentState !== "Landing") {
-      setIsLanding(false);
-    }
   }, [
     history,
     iscurrentState,
@@ -148,51 +111,140 @@ const useMenuData = () => {
         setIsDashboard(!isDashboard);
         setIscurrentState("Dashboard");
         updateIconSidebar(e);
+      }
+      // subItems: [
+      //   // {
+      //   //   id: "analytics",
+      //   //   label: "Analytics",
+      //   //   link: "/dashboard-analytics",
+      //   //   parentId: "dashboard"
+      //   // },
+      //   // {
+      //   //   id: "crm",
+      //   //   label: "CRM",
+      //   //   link: "/dashboard-crm",
+      //   //   parentId: "dashboard"
+      //   // },
+      //   // {
+      //   //   id: "ecommerce",
+      //   //   label: "Ecommerce",
+      //   //   link: "/dashboard",
+      //   //   parentId: "dashboard"
+      //   // }
+      //   // {
+      //   //   id: "crypto",
+      //   //   label: "Crypto",
+      //   //   link: "/dashboard-crypto",
+      //   //   parentId: "dashboard"
+      //   // },
+      //   // {
+      //   //   id: "projects",
+      //   //   label: "Projects",
+      //   //   link: "/dashboard-projects",
+      //   //   parentId: "dashboard"
+      //   // }
+      //   // {
+      //   //   id: "nft",
+      //   //   label: "NFT",
+      //   //   link: "/dashboard-nft",
+      //   //   parentId: "dashboard"
+      //   // },
+      //   // {
+      //   //   id: "job",
+      //   //   label: "Job",
+      //   //   badgeName: "New",
+      //   //   badgeColor: "success",
+      //   //   link: "/dashboard-job",
+      //   //   parentId: "dashboard"
+      //   // }
+      // ]
+    },
+    {
+      id: "apps",
+      label: "Apps",
+      icon: "bx bx-layer",
+      link: "/#",
+      click: function (e) {
+        e.preventDefault();
+        setIsApps(!isApps);
+        setIscurrentState("Apps");
+        updateIconSidebar(e);
       },
+      stateVariables: isApps,
       subItems: [
         {
-          id: "analytics",
-          label: "Analytics",
-          link: "/dashboard-analytics",
-          parentId: "dashboard"
-        },
-        {
-          id: "crm",
-          label: "CRM",
-          link: "/dashboard-crm",
-          parentId: "dashboard"
-        },
-        {
-          id: "ecommerce",
+          id: "appsecommerce",
           label: "Ecommerce",
-          link: "/dashboard",
-          parentId: "dashboard"
-        },
-        {
-          id: "crypto",
-          label: "Crypto",
-          link: "/dashboard-crypto",
-          parentId: "dashboard"
-        },
-        {
-          id: "projects",
-          label: "Projects",
-          link: "/dashboard-projects",
-          parentId: "dashboard"
-        },
-        {
-          id: "nft",
-          label: "NFT",
-          link: "/dashboard-nft",
-          parentId: "dashboard"
-        },
-        {
-          id: "job",
-          label: "Job",
-          badgeName: "New",
-          badgeColor: "success",
-          link: "/dashboard-job",
-          parentId: "dashboard"
+          link: "/#",
+          isChildItem: true,
+          click: function (e) {
+            e.preventDefault();
+            setIsEcommerce(!isEcommerce);
+          },
+          parentId: "apps",
+          stateVariables: isEcommerce,
+          childItems: [
+            {
+              id: 1,
+              label: "Products",
+              link: "/apps-ecommerce-products",
+              parentId: "apps"
+            },
+            {
+              id: 2,
+              label: "Product Details",
+              link: "/apps-ecommerce-product-details",
+              parentId: "apps"
+            },
+            {
+              id: 3,
+              label: "Create Product",
+              link: "/apps-ecommerce-add-product",
+              parentId: "apps"
+            },
+            {
+              id: 4,
+              label: "Orders",
+              link: "/apps-ecommerce-orders",
+              parentId: "apps"
+            },
+            {
+              id: 5,
+              label: "Order Details",
+              link: "/apps-ecommerce-order-details",
+              parentId: "apps"
+            },
+            {
+              id: 6,
+              label: "Customers",
+              link: "/apps-ecommerce-customers",
+              parentId: "apps"
+            },
+            {
+              id: 7,
+              label: "Shopping Cart",
+              link: "/apps-ecommerce-cart",
+              parentId: "apps"
+            },
+            {
+              id: 8,
+              label: "Checkout",
+              link: "/apps-ecommerce-checkout",
+              parentId: "apps"
+            },
+            {
+              id: 9,
+              label: "Sellers",
+              link: "/apps-ecommerce-sellers",
+              parentId: "apps"
+            },
+            {
+              id: 10,
+              label: "Seller Details",
+              link: "/apps-ecommerce-seller-details",
+              parentId: "apps"
+            }
+          ]
         }
       ]
     }

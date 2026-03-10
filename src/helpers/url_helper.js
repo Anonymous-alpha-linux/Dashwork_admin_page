@@ -15,5 +15,27 @@ export const GET_MONTHREVENUE_DATA = "/monthRevenue-data";
 export const GET_HALFYEARREVENUE_DATA = "/halfYearRevenue-data";
 export const GET_YEARREVENUE_DATA = "/yearRevenue-data";
 
+// Ecommerce
+// Product
+export const GET_PRODUCTS = "/apps/product";
+export const DELETE_PRODUCT = "/apps/product";
+export const ADD_NEW_PRODUCT = "/apps/product";
+export const UPDATE_PRODUCT = "/apps/product";
+
+// Orders
+export const GET_ORDERS = "/apps/order";
+export const ADD_NEW_ORDER = "/apps/order";
+export const UPDATE_ORDER = "/apps/order";
+export const DELETE_ORDER = "/apps/order";
+
+// Customers
+export const GET_CUSTOMERS = "/apps/customer";
+export const ADD_NEW_CUSTOMER = "/apps/customer";
+export const UPDATE_CUSTOMER = "/apps/customer";
+export const DELETE_CUSTOMER = "/apps/customer";
+
+// Sellers
+export const GET_SELLERS = "/sellers";
+
 //JOB APPLICATION
 export const GET_API_KEY = "/api-key";
