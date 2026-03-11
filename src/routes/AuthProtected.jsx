@@ -37,10 +37,11 @@ const AccessRoute = ({ component: Component, ...rest }) => {
       {...rest}
       render={(props) => {
         return (
-          <>
-            {" "}
-            <Component {...props} />{" "}
-          </>
+          <Suspense
+            fallback={<div className="p-4 text-center">Loading...</div>}
+          >
+            <Component {...props} />
+          </Suspense>
         );
       }}
     />
